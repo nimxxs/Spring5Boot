@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>index</title>
-    <link rel ="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/project.css">
 </head>
 <body>
@@ -12,7 +12,8 @@
     <header class="row">
         <div class="col"><h1 id="logo">Lorem Ipsum</h1></div>
         <div class="col text-end">
-            <button type="button" class="btn btn-danger mt-2">로그인</button>
+            <button type="button" class="btn btn-danger mt-2"
+                data-bs-target="#loginfrm" data-bs-toggle="modal">로그인</button>
             <button type="button" class="btn btn-primary mt-2">회원가입</button>
         </div>
     </header>
@@ -33,56 +34,105 @@
             <div class="col-12">
                 <h1 class="display-1 text-center p-3">超機密 PROJECT 補完計劃</h1>
             </div>
-            <div class="col-33 offset-2">
+            <div class="col-8 offset-2">
                 <img src="/assets/img/옥지.jpg">
             </div>
         </div><!-- title, image -->
         <div class="row">
             <div class="col-8 offset-2 text-center p-3">
                 <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
-                <div><button type="button" class="btn btn-success">
-                    지금 바로 시작하기</button></div>
+                    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it
+                    is pain..."</p>
+                <div>
+                    <button type="button" class="btn btn-success">
+                        지금 바로 시작하기
+                    </button>
+                </div>
             </div>
         </div><!-- hero -->
 
         <div class="row m-4">
             <div class="col-4 my-4">
                 <h2>極秘</h2>
-                <p>Etiam tincidunt egestas sollicitudin. Aliquam hendrerit mi sed urna volutpat, ac accumsan est vehicula. Cras luctus quis erat interdum aliquet. Donec rhoncus luctus elit, et vestibulum arcu condimentum non. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer non egestas tortor, ut iaculis purus. In vel placerat est. Praesent facilisis metus vel accumsan sodales. Quisque elementum mollis ultricies.</p>
-                <div><button type="button" class="btn btn-light">
-                    자세히 보기 &blacktriangleright;
-                </button></div>
-            </div><div class="col-4 my-4">
+                <p>Etiam tincidunt egestas sollicitudin. Aliquam hendrerit mi sed urna volutpat, ac accumsan est
+                    vehicula. Cras luctus quis erat interdum aliquet. Donec rhoncus luctus elit, et vestibulum arcu
+                    condimentum non. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                    Integer non egestas tortor, ut iaculis purus. In vel placerat est. Praesent facilisis metus vel
+                    accumsan sodales. Quisque elementum mollis ultricies.</p>
+                <div>
+                    <button type="button" class="btn btn-light">
+                        자세히 보기 &blacktriangleright;
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 my-4">
                 <h2>誤謬</h2>
-                <p>Fusce fringilla vehicula dignissim. Pellentesque vitae ultrices est. Mauris a semper mi, lobortis tincidunt diam. Vivamus faucibus massa id gravida tempor. Aliquam sed diam ullamcorper, cursus massa sit amet, ultrices dolor. Sed ac lorem urna. Praesent sollicitudin sit amet sem id vulputate.</p>
-                <div><button type="button" class="btn btn-light">
-                    자세히 보기 &blacktriangleright;
-                </button></div>
-            </div><div class="col-4 my-4">
+                <p>Fusce fringilla vehicula dignissim. Pellentesque vitae ultrices est. Mauris a semper mi, lobortis
+                    tincidunt diam. Vivamus faucibus massa id gravida tempor. Aliquam sed diam ullamcorper, cursus massa
+                    sit amet, ultrices dolor. Sed ac lorem urna. Praesent sollicitudin sit amet sem id vulputate.</p>
+                <div>
+                    <button type="button" class="btn btn-light">
+                        자세히 보기 &blacktriangleright;
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 my-4">
                 <h2>警告</h2>
-                <p>Mauris imperdiet lacinia nunc ut varius. Praesent sed lectus at orci ullamcorper feugiat. Integer suscipit sit amet lectus nec dignissim. Donec nec pretium libero. Quisque consectetur ultricies enim et tincidunt. Cras consectetur felis et lacinia semper. Phasellus finibus dignissim arcu id pharetra. Duis aliquet vel arcu vitae faucibus. Quisque elementum sagittis libero vitae vestibulum. Duis porttitor efficitur nunc, in viverra turpis suscipit eget. Morbi posuere rhoncus nisl. Nulla vitae posuere mauris. Nam dignissim ultrices sem eu pellentesque. Maecenas a orci fermentum, eleifend nulla at, facilisis sem.</p>
-                <div><button type="button" class="btn btn-light">
-                    자세히 보기 &blacktriangleright;
-                </button></div>
-            </div><div class="col-4 my-4">
+                <p>Mauris imperdiet lacinia nunc ut varius. Praesent sed lectus at orci ullamcorper feugiat. Integer
+                    suscipit sit amet lectus nec dignissim. Donec nec pretium libero. Quisque consectetur ultricies enim
+                    et tincidunt. Cras consectetur felis et lacinia semper. Phasellus finibus dignissim arcu id
+                    pharetra. Duis aliquet vel arcu vitae faucibus. Quisque elementum sagittis libero vitae vestibulum.
+                    Duis porttitor efficitur nunc, in viverra turpis suscipit eget. Morbi posuere rhoncus nisl. Nulla
+                    vitae posuere mauris. Nam dignissim ultrices sem eu pellentesque. Maecenas a orci fermentum,
+                    eleifend nulla at, facilisis sem.</p>
+                <div>
+                    <button type="button" class="btn btn-light">
+                        자세히 보기 &blacktriangleright;
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 my-4">
                 <h2>危險</h2>
-                <p>Donec velit massa, rhoncus rutrum malesuada a, iaculis a est. Quisque viverra maximus cursus. Duis lobortis ipsum non tortor bibendum lobortis. Integer scelerisque justo at tortor gravida, sit amet porta felis tristique. Phasellus purus turpis, fringilla sed metus ut, vestibulum molestie risus. Nam vitae erat sit amet orci pretium ultricies sed semper nunc. Pellentesque ex purus, imperdiet non risus vitae, dignissim pulvinar elit. Etiam nec enim id urna porta mattis. Praesent laoreet porta arcu, et venenatis magna faucibus ac. Praesent pharetra risus et mauris accumsan, at facilisis mauris tempor. Sed eu bibendum sapien. Suspendisse bibendum pulvinar dolor aliquam lobortis. Maecenas nec rhoncus nunc.</p>
-                <div><button type="button" class="btn btn-light">
-                    자세히 보기 &blacktriangleright;
-                </button></div>
-            </div><div class="col-4 my-4">
+                <p>Donec velit massa, rhoncus rutrum malesuada a, iaculis a est. Quisque viverra maximus cursus. Duis
+                    lobortis ipsum non tortor bibendum lobortis. Integer scelerisque justo at tortor gravida, sit amet
+                    porta felis tristique. Phasellus purus turpis, fringilla sed metus ut, vestibulum molestie risus.
+                    Nam vitae erat sit amet orci pretium ultricies sed semper nunc. Pellentesque ex purus, imperdiet non
+                    risus vitae, dignissim pulvinar elit. Etiam nec enim id urna porta mattis. Praesent laoreet porta
+                    arcu, et venenatis magna faucibus ac. Praesent pharetra risus et mauris accumsan, at facilisis
+                    mauris tempor. Sed eu bibendum sapien. Suspendisse bibendum pulvinar dolor aliquam lobortis.
+                    Maecenas nec rhoncus nunc.</p>
+                <div>
+                    <button type="button" class="btn btn-light">
+                        자세히 보기 &blacktriangleright;
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 my-4">
                 <h2>隔離</h2>
-                <p>Aenean non sem turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam tempor ut sapien non posuere. Sed luctus sollicitudin viverra. Nam eget dictum felis. Nulla vel auctor eros. Morbi elementum hendrerit sem, vitae feugiat enim condimentum id. In quam eros, dictum vel massa tincidunt, elementum laoreet ex.</p>
-                <div><button type="button" class="btn btn-light">
-                    자세히 보기 &blacktriangleright;
-                </button></div>
-            </div><div class="col-4 my-4">
+                <p>Aenean non sem turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam tempor ut
+                    sapien non posuere. Sed luctus sollicitudin viverra. Nam eget dictum felis. Nulla vel auctor eros.
+                    Morbi elementum hendrerit sem, vitae feugiat enim condimentum id. In quam eros, dictum vel massa
+                    tincidunt, elementum laoreet ex.</p>
+                <div>
+                    <button type="button" class="btn btn-light">
+                        자세히 보기 &blacktriangleright;
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 my-4">
                 <h2>制限</h2>
-                <p>Ut id justo placerat, vulputate tortor id, efficitur leo. Vivamus at arcu massa. Sed vitae felis id urna tristique tempor. Praesent rutrum lorem a sem blandit, in molestie dolor malesuada. Etiam eros ex, aliquet sit amet lorem in, consectetur scelerisque nunc. Aenean pharetra tincidunt ornare. Sed hendrerit eros dui, eget dignissim arcu faucibus at. Nunc a purus consectetur, facilisis nisi a, hendrerit augue. Sed et volutpat nibh. In tristique dui non ex convallis, vel pellentesque mauris molestie. Proin ullamcorper lacinia urna et blandit. Suspendisse massa velit, molestie eu neque vitae, aliquet faucibus lectus.</p>
-                <div><button type="button" class="btn btn-light">
-                    자세히 보기 &blacktriangleright;
-                </button></div>
+                <p>Ut id justo placerat, vulputate tortor id, efficitur leo. Vivamus at arcu massa. Sed vitae felis id
+                    urna tristique tempor. Praesent rutrum lorem a sem blandit, in molestie dolor malesuada. Etiam eros
+                    ex, aliquet sit amet lorem in, consectetur scelerisque nunc. Aenean pharetra tincidunt ornare. Sed
+                    hendrerit eros dui, eget dignissim arcu faucibus at. Nunc a purus consectetur, facilisis nisi a,
+                    hendrerit augue. Sed et volutpat nibh. In tristique dui non ex convallis, vel pellentesque mauris
+                    molestie. Proin ullamcorper lacinia urna et blandit. Suspendisse massa velit, molestie eu neque
+                    vitae, aliquet faucibus lectus.</p>
+                <div>
+                    <button type="button" class="btn btn-light">
+                        자세히 보기 &blacktriangleright;
+                    </button>
+                </div>
             </div>
         </div>
         <div class="row"></div><!-- article -->
@@ -95,6 +145,27 @@
             Created by Bootstrap5</h6>
     </footer>
 </div>
+
+<!-- login modal -->
+<div class="modal" id="loginfrm" role="dialog"
+     data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>로그인</h2>
+                <button type="button" class="btn btn-light"
+                    data-bs-dismiss="modal">닫기</button>
+            </div><!-- mdh -->
+            <div class="modal-body"></div><!-- mdb -->
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-danger" id="loginbtn">로그인</button>
+                <button type="button" class="btn btn-warning">아이디/비밀번호 찾기</button>
+            </div><!-- mdf -->
+        </div> <!-- mdc -->
+    </div> <!-- mdd -->
+
+</div>
+
 
 <script src="/assets/js/bootstrap.bundle.min.js"></script>
 </body>
