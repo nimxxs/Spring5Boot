@@ -16,7 +16,7 @@ noagree?.addEventListener('click', () => {
 // checkmed
 let frm = document.forms.agreefrm2;     // 폼 안에서 특정 요소를 가져오는 것은 id가 아닌 name으로 가져옴. 아닐시 id로 가져와야함.
 let checkbtn2 = document.querySelector("#checkbtn2");
-let canclebtn2 = document.querySelector("#canclebtn2");
+let cancelbtn2 = document.querySelector("#cancelbtn2");
 
 checkbtn2?.addEventListener('click', () => {
     if (frm.name.value === '') alert('이름을 입력해주세요!');
@@ -24,13 +24,10 @@ checkbtn2?.addEventListener('click', () => {
     else if (frm.jumin2.value === '') alert('주민번호 뒷자리를 작성해주세요!');
     else if (!frm.infoagree.checked) alert('주민번호 처리에 동의하세요!');
     else {
-        let params = '?name=' + frm.name.value;
-        params += '&jumin1=' + frm.jumin1.value;
-        params += '&jumin2=' + frm.jumin2.value;
-
-        location.href = '/join/joinme' + params;
+        frm.method = 'post';
+        frm.submit();
     }
 });
-canclebtn2?.addEventListener('click', () => {
+cancelbtn2?.addEventListener('click', () => {
     location.href = "/";
 });
