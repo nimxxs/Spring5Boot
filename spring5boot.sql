@@ -2,7 +2,7 @@
 create table member2 (
     mno         int             auto_increment,
     userid      varchar(18)     unique,
-    password    varchar(18)     not null,
+    passwd      varchar(18)     not null,
     name        varchar(10)     not null,
     email       varchar(50)     unique,
     zipcode     char(7)         not null,
@@ -14,7 +14,7 @@ create table member2 (
 );
 
 insert into member2
-(userid, password, name, email, zipcode, addr1, addr2, phone)
-values ('abc123','987xyz','빵빵이','abc123@987xyz','123-456','서울 관악구','블라블ㄹ라','123-4567-8912');
+(userid, passwd, name, email, zipcode, addr1, addr2, phone)
+values ('abc123','987xyz','빵빵이','abc123@987xyz','123-456','서울 관악구','블라블라','123-4567-8912');
 
 select * from member2;
