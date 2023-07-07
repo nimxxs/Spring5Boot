@@ -60,7 +60,7 @@ public class JoinController {
         if(msrv.saveMember(m))
             viewPage = "redirect:/join/joinok";
 
-        return "join/joinme";
+        return viewPage;
     }
     @GetMapping("/joinok")
     public String joinok() {
