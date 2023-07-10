@@ -98,7 +98,7 @@ sendzip?.addEventListener('click', ()=> {
 
 email3.addEventListener('click', () => {
     let frm = document.forms.joinfrm;
-    if (email3.value === '직접입력하기') {
+    if (email3.value === '직접 입력하기') {
         frm.email2.readOnly = false;    // readOnly 속성 강제로 해제
         frm.email2.value =  '';         // 빈값으로 넣기
     } else if (email3.value !== '선택하세요') {
