@@ -42,13 +42,14 @@ let addrlist = document.querySelector("#addrlist");
 let sendzip = document.querySelector("#sendzip");
 let modal = null;       // 우편번호 모달
 
+let email3 = document.querySelector("#email3");
+
 zipbtn?.addEventListener('click', () => {
     while(addrlist.lastChild) {
         addrlist.removeChild(addrlist.lastChild);
     } // 이전 검색 결과 지움
     dong.value = '';    // 이전 검색 키워드 지움
 
-    let modal = null;
     try {
         // 새로운 모달 창 생성
         modal = new bootstrap.Modal(zipmodal, {});
@@ -83,7 +84,7 @@ sendzip?.addEventListener('click', ()=> {
         // 123-456 서울 관악구 신림동
         let zip = addr.split(' ')[0];   // 우편번호 추출
         let addrs = addr.split(' ');
-        let vaddr = `${addrs(' ')[1]} ${addrs(' ')[2]} ${addrs(' ')[3]}`;  // 주소추출
+        let vaddr = `${addrs[1]} ${addrs[2]} ${addrs[3]}`;  // 주소추출
 
         frm.zip1.value = zip.split('-')[0];
         frm.zip2.value = zip.split('-')[1];
@@ -92,5 +93,16 @@ sendzip?.addEventListener('click', ()=> {
         modal.hide();   // 모달창 닫음
     } else {
         alert('주소를 선택하세요!!');
+    }
+});
+
+email3.addEventListener('click', () => {
+    let frm = document.forms.joinfrm;
+    if (email3.value === '직접입력하기') {
+        frm.email2.readOnly = false;    // readOnly 속성 강제로 해제
+        frm.email2.value =  '';         // 빈값으로 넣기
+    } else if (email3.value === '선택하세요') {
+        frm.email2.readOnly = true;
+        frm.email2.value =  email3.value;
     }
 });
