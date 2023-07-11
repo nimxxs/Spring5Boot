@@ -217,3 +217,10 @@ loginbtn?.addEventListener('click', () => {
         lgfrm.submit();     // 보내는 것
     }
 });
+
+// logout
+let lgoutbtn = document.querySelector("#lgoutbtn");
+
+lgoutbtn?.addEventListener('click', () => {
+   location.href = '/join/logout';
+});

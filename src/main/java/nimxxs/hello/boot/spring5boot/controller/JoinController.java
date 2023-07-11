@@ -118,4 +118,12 @@ public class JoinController {
         return returnPage;
     }
 
+    // 로그아웃 처리
+    @GetMapping("/logout")
+    public String logout(HttpSession sess) {
+        sess.invalidate();  // 세션 객체 제거
+
+        return "redirect:/";
+    }
+
 }
