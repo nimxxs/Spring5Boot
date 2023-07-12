@@ -1,12 +1,8 @@
 package nimxxs.hello.boot.spring5boot.board;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import nimxxs.hello.boot.spring5boot.dao.BoardDAO;
 import nimxxs.hello.boot.spring5boot.dao.BoardDAOImpl;
-import nimxxs.hello.boot.spring5boot.dao.MemberDAO;
-import nimxxs.hello.boot.spring5boot.dao.MemberDAOImpl;
 import nimxxs.hello.boot.spring5boot.model.Board;
-import nimxxs.hello.boot.spring5boot.model.Member;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
@@ -30,7 +26,10 @@ public class BoardDAOUnitTest {
     @Test
     @DisplayName("BoardDAO insert Test")
     void selectBoard() {
-       List<Board> results = bdao.selectBoard();
+        int cpg = 1;
+        int stnum = (cpg - 1) * 25;
+
+       List<Board> results = bdao.selectBoard(stnum);
        assertNotNull(results);
     }
 
