@@ -18,8 +18,10 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public List<Board> readBoard() {        // 값 받아서 넘기기만 하면됨
-        return bdao.selectBoard();
+    public List<Board> readBoard(Integer cpg) {        // 값 받아서 넘기기만 하면됨
+        int stnum = (cpg - 1) * 25;
+
+        return bdao.selectBoard(stnum);
     }
 
     @Override
