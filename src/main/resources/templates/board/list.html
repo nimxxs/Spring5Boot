@@ -61,7 +61,8 @@
 
                         <tr th:each="bd : ${bds}">
                             <td th:text="${bd.bno}">1</td>
-                            <td th:text="${bd.title}">옥지얌 그게 이래가지구 저래가지구 호에엥</td>
+                            <td>
+                                <a href="|/board/view/${bd.bno}|" th:text="${bd.title}">옥지얌 그게 이래가지구 저래가지구 호에엥</a></td>
                             <td th:text="${bd.userid}">빵빵이</td>
                             <td th:text="${#strings.substring(bd.regdate,0,10)}">2023-05-01</td>
                             <td th:text="${bd.thumbs}">666</td>
