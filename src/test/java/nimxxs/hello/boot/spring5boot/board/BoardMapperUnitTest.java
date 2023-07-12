@@ -22,15 +22,6 @@ public class BoardMapperUnitTest {
     @Autowired
     private BoardMapper boardMapper;
 
-    /*@Test
-    @DisplayName("BoardMapper insert Test")
-    void insertBoard() {
-        Board b = new Board ("abc123","","","");
-
-        int result = boardMapper.insertBoard(b);
-        System.out.println(result);
-        assertEquals(result, 1);
-    }*/
     @Test
     @DisplayName("BoardMapper select Test")
     void selectBoard() {
@@ -42,15 +33,13 @@ public class BoardMapperUnitTest {
         System.out.println(results);
         assertNotNull(results);
     }
-   /* @Test
-    @DisplayName("BoardMapper selectOneBoard Test")
+    @Test
+    @DisplayName("BoardMapper selectOne Test")
     void selectOneBoard() {
-        Board b = new Board();
-        b.setUserid("abc123");
+        String bno = "804";
 
-        Board result = boardMapper.selectOneBoard(b);
+        Board result = boardMapper.selectOneBoard(bno);
 
-        System.out.println(result);
         assertNotNull(result);
-    }*/
+    }
 }
