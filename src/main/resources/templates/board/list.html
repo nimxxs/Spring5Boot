@@ -59,13 +59,13 @@
                             <th>1234</th>
                         </tr>
 
-                        <tr>
-                            <td>1</td>
-                            <td>옥지얌 그게 이래가지구 저래가지구 호에엥</td>
-                            <td>빵빵이</td>
-                            <td>2023-05-01</td>
-                            <td>666</td>
-                            <td>1234</td>
+                        <tr th:each="bd : ${bds}">
+                            <td th:text="${bd.bno}">1</td>
+                            <td th:text="${bd.title}">옥지얌 그게 이래가지구 저래가지구 호에엥</td>
+                            <td th:text="${bd.userid}">빵빵이</td>
+                            <td th:text="${#strings.substring(bd.regdate,0,10)}">2023-05-01</td>
+                            <td th:text="${bd.thumbs}">666</td>
+                            <td th:text="${bd.views}">1234</td>
                         </tr>
 
                     </tbody><!-- 본문 -->
