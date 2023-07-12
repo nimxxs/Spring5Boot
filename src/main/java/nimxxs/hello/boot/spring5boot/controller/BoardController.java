@@ -18,10 +18,10 @@ public class BoardController {
 
     Logger logger = LogManager.getLogger(BoardController.class);
     @GetMapping("/list")
-    public String list(Model m) {       // 모델 객체를 받아옴
+    public String list(Model m, Integer cpg) {       // 모델 객체를 받아옴
         logger.info("board/list 호출!!");
 
-        m.addAttribute("bds", bsrv.readBoard());
+        m.addAttribute("bds", bsrv.readBoard(cpg));
 
         return "board/list";
     }
