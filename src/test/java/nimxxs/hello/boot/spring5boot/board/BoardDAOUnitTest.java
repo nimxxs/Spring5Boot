@@ -24,13 +24,22 @@ public class BoardDAOUnitTest {
     @Autowired private BoardDAO bdao;
 
     @Test
-    @DisplayName("BoardDAO insert Test")
+    @DisplayName("BoardDAO select Test")
     void selectBoard() {
         int cpg = 1;
         int stnum = (cpg - 1) * 25;
 
        List<Board> results = bdao.selectBoard(stnum);
        assertNotNull(results);
+    }
+
+    @Test
+    @DisplayName("BoardDAO selectOne Test")
+    void selectOneBoard() {
+        String bno = "804";
+
+        Board result = bdao.selectOneBoard(bno);
+        assertNotNull(result);
     }
 
 
