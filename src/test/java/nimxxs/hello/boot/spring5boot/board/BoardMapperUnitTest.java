@@ -1,7 +1,6 @@
 package nimxxs.hello.boot.spring5boot.board;
 
 import nimxxs.hello.boot.spring5boot.model.Board;
-import nimxxs.hello.boot.spring5boot.model.Member;
 import nimxxs.hello.boot.spring5boot.mybatis.BoardMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -35,7 +34,10 @@ public class BoardMapperUnitTest {
     @Test
     @DisplayName("BoardMapper select Test")
     void selectBoard() {
-        List<Board> results = boardMapper.selectBoard();
+        int cpg = 1;
+        int stnum = (cpg - 1) * 25;
+
+        List<Board> results = boardMapper.selectBoard(stnum);
 
         System.out.println(results);
         assertNotNull(results);
