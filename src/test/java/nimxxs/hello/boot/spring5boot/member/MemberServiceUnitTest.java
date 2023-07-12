@@ -1,4 +1,4 @@
-package nimxxs.hello.boot.spring5boot;
+package nimxxs.hello.boot.spring5boot.member;
 
 import nimxxs.hello.boot.spring5boot.dao.MemberDAO;
 import nimxxs.hello.boot.spring5boot.dao.MemberDAOImpl;
