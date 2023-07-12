@@ -14,7 +14,7 @@
     </select>
 
     <select id="selectOneBoard" resultType="Board">
-        select title, userid, regdate, thumbs, views from board2 where userid = #{userid}
+        select * from board2 where bno = #{bno}
     </select>
 
 </mapper>

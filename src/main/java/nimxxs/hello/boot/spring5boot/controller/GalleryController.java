@@ -16,6 +16,6 @@ public class GalleryController {
     public String list() {
         logger.info("gallery/list 호출!!");
 
-        return "gallery/list";
+        return "/gallery/list";
     }
 }

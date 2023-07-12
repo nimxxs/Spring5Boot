@@ -13,18 +13,18 @@ public class IndexController {
     public String index() {
         logger.info("index 호출!!");
 
-        return "index";
+        return "/index";
     }
     @GetMapping("/intro")
     public String intro() {
         logger.info("intro 호출!!");
 
-        return "intro";
+        return "/intro";
     }
     @GetMapping("/admin")
     public String admin() {
         logger.info("admin 호출!!");
 
-        return "admin";
+        return "/admin";
     }
 }

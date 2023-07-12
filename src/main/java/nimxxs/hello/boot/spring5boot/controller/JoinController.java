@@ -24,13 +24,13 @@ public class JoinController {
     public String agree() {
         logger.info("join/agree 호출!!");
 
-        return "join/agree";
+        return "/join/agree";
     }
     @GetMapping("/checkme")
     public String checkme() {
         logger.info("join/checkme 호출!!");
 
-        return "join/checkme";
+        return "/join/checkme";
     }
     @PostMapping("/checkme")
     public String checkmeok(Checkme checkme, HttpSession sess) {
@@ -54,7 +54,7 @@ public class JoinController {
         if (sess.getAttribute("checkme") == null)
             return "redirect:/join/agree";
 
-        return "join/joinme";
+        return "/join/joinme";
     }
     @PostMapping("/joinme")
     public String joinmeok(Member m) {
@@ -70,7 +70,7 @@ public class JoinController {
     public String joinok() {
         logger.info("join/joinok 호출!!");
 
-        return "join/joinok";
+        return "/join/joinok";
     }
 
     // 우편번호 검색

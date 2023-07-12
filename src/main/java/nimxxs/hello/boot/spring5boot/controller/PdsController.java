@@ -15,6 +15,6 @@ public class PdsController {
     public String list() {
         logger.info("pds/list 호출!!");
 
-        return "pds/list";
+        return "/pds/list";
     }
 }
