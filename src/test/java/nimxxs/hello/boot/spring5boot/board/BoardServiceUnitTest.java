@@ -27,11 +27,18 @@ public class BoardServiceUnitTest {
     @DisplayName("BoardService read Test")
     void readBoard() {
         int cpg = 1;
-
         List<Board> results = bsrv.readBoard(cpg);
 
         // System.out.println(results);
         assertNotNull(results);
+    }
+    @Test
+    @DisplayName("BoardService readOne Test")
+    void readOneBoard() {
+        String bno ="804";
+
+        Board result = bsrv.readOneBoard(bno);
+        assertNotNull(result);
     }
 
 
