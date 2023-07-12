@@ -26,8 +26,7 @@ public class BoardControllerUnitTest {
     @DisplayName("BoardController read Test")
     void readBoard() throws Exception {
 
-        mvc.perform(get("/board/list")
-                .param("cpg", "1"))
+        mvc.perform(get("/board/list/1"))
                 .andExpect(status().isOk())
                 .andDo(print());
     }
@@ -37,6 +36,19 @@ public class BoardControllerUnitTest {
 
         mvc.perform(get("/board/view/804"))
                 .andExpect(status().isOk())
+                .andDo(print());
+    }
+    @Test
+    @DisplayName("BoardController write Test")
+    @Transactional
+    void write() throws Exception {
+
+        mvc.perform(post("/board/write")
+                        .param("title","")
+                        .param("userid","abc123")
+                        .param("contents","")
+                        .param("ipaddr",""))
+                .andExpect(status().is3xxRedirection())
                 .andDo(print());
     }
 
