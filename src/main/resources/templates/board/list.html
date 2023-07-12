@@ -10,7 +10,7 @@
             <hr>
         </div>
 
-        <div class="row">
+        <div class="row mt-5 mb-3">
             <div class="row offset-1 col-7">
                 <div class="col-2">
                     <select class="form-select" id="findtype">
@@ -29,13 +29,13 @@
                 </div>
             </div><!-- 검색 -->
             <div class="col-3 text-end">
-                <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light" id="newbdbtn">
                     <i class="fa fa-plus-circle"></i> 새글쓰기
                 </button>
             </div><!-- 새글쓰기 -->
         </div><!-- 검색 및 새글쓰기 -->
 
-        <div class="row">
+        <div class="row mt-3 mb-5">
             <div class="offset-1 col-10">
                 <table class="table table-striped tbborder">
                     <thead class="thbg">
@@ -62,7 +62,7 @@
                         <tr th:each="bd : ${bds}">
                             <td th:text="${bd.bno}">1</td>
                             <td>
-                                <a href="|/board/view/${bd.bno}|" th:text="${bd.title}">옥지얌 그게 이래가지구 저래가지구 호에엥</a></td>
+                                <a th:href="|/board/view/${bd.bno}|" th:text="${bd.title}">옥지얌 그게 이래가지구 저래가지구 호에엥</a></td>
                             <td th:text="${bd.userid}">빵빵이</td>
                             <td th:text="${#strings.substring(bd.regdate,0,10)}">2023-05-01</td>
                             <td th:text="${bd.thumbs}">666</td>
@@ -77,20 +77,14 @@
         <div class="row">
             <div class="offset-1 col-10">
                 <nav>
-                    <ul class="pagination">
+                    <ul class="pagination justify-content-center">
                         <li class="page-item"><a href="#" class="page-link">처음</a></li>
                         <li class="page-item"><a href="#" class="page-link">이전</a></li>
 
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">5</a></li>  <!-- 현재 보고있는 페이지-->
-                        <li class="page-item"><a href="#" class="page-link">6</a></li>
-                        <li class="page-item"><a href="#" class="page-link">7</a></li>
-                        <li class="page-item"><a href="#" class="page-link">8</a></li>
-                        <li class="page-item"><a href="#" class="page-link">9</a></li>
-                        <li class="page-item"><a href="#" class="page-link">10</a></li>
+                        <th:block th:each="i : ${#numbers.sequence(1, 10)}">
+                             <li th:class="${(i ne cpg) ? 'page-item' : 'page-item active'}">
+                                 <a th:href="|/board/list/${i}|" class="page-link" th:text="${i}">1</a></li>
+                        </th:block>
 
                         <li class="page-item"><a href="#" class="page-link">다음</a></li>
                         <li class="page-item"><a href="#" class="page-link">끝</a></li>
