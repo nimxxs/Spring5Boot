@@ -33,7 +33,7 @@
                 <tr class="vinfo"><td th:text="${bd.userid}">작성자</td>
                     <td class="text-end" th:text="|${bd.regdate} / ${bd.thumbs} / ${bd.views}|">작성일/추천/조회</td></tr>
 
-                <tr><td class="vcont" colspan="2"></td>본문글</tr>
+                <tr><td class="vcont" colspan="2" th:text="${bd.contents}"></td>본문글</tr>
             </table>
         </div><!-- 본문글 -->
 
