@@ -25,9 +25,15 @@ public class BoardController {
         logger.info("board/list 호출!!");
 
         m.addAttribute("bds", bsrv.readBoard(cpg));
-        m.addAttribute("cpg", cpg);
-        m.addAttribute("cntpg", bsrv.countBoard());
+        m.addAttribute("cpg", cpg);                     // 현재 페이지
+        int cntpg = bsrv.countBoard();
+        m.addAttribute("cntpg", cntpg);     // 총 페이지
         m.addAttribute("stpg", ((cpg-1)/10) * 10 +1);
+
+        // 만일, 현재 페이지가 총 페이지수 보다 크다면
+        // 1페이지로 강제 이동
+        if (cpg > cntpg)
+            return "redirect:/board/list/1";
 
         return "/board/list";
     }
