@@ -22,4 +22,10 @@
         where bno = #{bno}
     </update>
 
+    <select id="selectCountBoard">
+        <!-- select count(*) from board2 / 총 페이지 수 -->
+        <!-- 총 페이지 수에서 25로 나누면 현재 페이지인데 ceil로.. -->
+        select ceil(count(bno) / 25) cntpg from board2
+    </select>
+
 </mapper>
