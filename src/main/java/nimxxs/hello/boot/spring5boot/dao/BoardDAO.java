@@ -3,6 +3,7 @@ package nimxxs.hello.boot.spring5boot.dao;
 import nimxxs.hello.boot.spring5boot.model.Board;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BoardDAO {
     int insertBoard(Board b);
@@ -11,4 +12,5 @@ public interface BoardDAO {
 
     Board selectOneBoard(String bno);
     int selectCountBoard();
+    List<Board> selectFindBoard(Map<String, Object> params);
 }
