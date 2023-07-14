@@ -50,3 +50,38 @@ insert into board2
 values ('987xyz','밖에 비가 많이 오니','김치전이 먹고싶구나','1.1.1.1.1');
 
 select count(userid) cnt, ceil(count(userid) / 25) pages from board2;
+
+select * from board2
+where title like '%연예인%';
+
+-- pds
+create table pds (
+  pno       int             auto_increment,
+  title     varchar(100)    not null,
+  userid    varchar(18)     not null,
+  regdate   datetime        default current_timestamp,
+  thumbs    int             default 0,
+  views     int             default 0,
+  contents  text            not null,
+  ipaddr    varchar(15)     not null,
+  primary key (pno)
+);
+
+create table pdsattach (
+    pano    int             auto_increment,
+    pno     int             not null,           -- 게시글 번호
+    fname   varchar(200)    not null,           -- 파일 이름 (uuid 포함)
+    ftype   varchar(3)      not null,           -- 파일 타입
+    fsize   float           not null,           -- 파일 용량
+    fdown   int             default 0,          -- 다운 횟수
+    primary key (pano)
+);
+
+alter table pds
+    add constraint fkpuid
+        foreign key (userid) references member2 (userid);
+
+alter table pdsattach
+    add constraint fkpno
+        foreign key (pno) references pds (pno);
+
