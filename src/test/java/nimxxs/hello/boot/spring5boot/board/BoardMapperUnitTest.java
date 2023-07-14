@@ -84,4 +84,15 @@ public class BoardMapperUnitTest {
 
         assertNotNull(results);
     }
+    @Test
+    @DisplayName("BoardMapper countfindBoard Test")
+    void countfindBoard() {
+        Map<String, Object> params = new HashMap<>();
+        params.put("findtype","title");
+        params.put("findkey","빵빵");
+
+        int result = boardMapper.countFindBoard(params);
+
+        assertNotNull(result);
+    }
 }
