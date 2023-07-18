@@ -28,7 +28,7 @@ public class PdsControllerUnitTest {
     @DisplayName("PdsController upload Test")
     void writeok() throws Exception {
 
-        String fpath = "C:/Java/sleep.jpg";
+        String fpath = "C:/Java/옥지.jpg";
         FileInputStream fis = new FileInputStream(fpath);
 
         // MockMultipartFile(폼이름,파일명,MIME,파일객체)
@@ -42,6 +42,13 @@ public class PdsControllerUnitTest {
                         .param("contents","bbb")
                         .param("ipaddr","1.1.1.1.1")
                 ).andExpect(status().is3xxRedirection())
+                .andDo(print());
+    }
+    @Test
+    @DisplayName("PdsController download Test")
+    void download() throws Exception {
+        mvc.perform(get("/pds/down/2"))
+                .andExpect(status().is(200))
                 .andDo(print());
     }
 
