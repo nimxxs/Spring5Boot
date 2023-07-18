@@ -1,6 +1,7 @@
 package nimxxs.hello.boot.spring5boot.dao;
 
 import nimxxs.hello.boot.spring5boot.model.Pds;
+import nimxxs.hello.boot.spring5boot.model.PdsAttach;
 import nimxxs.hello.boot.spring5boot.mybatis.PdsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,5 +20,10 @@ public class PdsDAOImpl implements PdsDAO{
             cnt = pdsMapper.lastPdsPno();
 
         return cnt;
+    }
+
+    @Override
+    public int insertPdsAttach(PdsAttach pa) {
+        return pdsMapper.insertPdsAttach(pa);
     }
 }
