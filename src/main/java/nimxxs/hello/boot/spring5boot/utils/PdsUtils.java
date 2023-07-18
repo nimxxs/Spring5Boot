@@ -85,7 +85,7 @@ public class PdsUtils {
                     Files.probeContentType(Paths.get(saveDir + fname)));
             // 다운로드시 표시할 파일이름 지정
             header.add("Content-Disposition",
-                    "attachment; filename=" + fname + "");
+                    "attachment; filename=" + fname);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -95,6 +95,14 @@ public class PdsUtils {
 
     public UrlResource getResource(String fname) {
         UrlResource resource = null;
+
+        fname = UriUtils.encode(fname, StandardCharsets.UTF_8);
+
+        try {
+            resource = new UrlResource("file:" + saveDir + fname);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         return resource;
     }
