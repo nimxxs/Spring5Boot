@@ -25,84 +25,37 @@
         <collection property="pa" resultMap="pa" />
     </resultMap>
 
-
     <insert id="insertPds" parameterType="Pds">
         insert into pds (userid, title, contents, ipaddr)
-        values (#{userid},#{title},#{contents},#{ipaddr})
+        values (#{userid}, #{title}, #{contents}, #{ipaddr})
     </insert>
 
     <select id="lastPdsPno">
-        <!-- select AUTO_INCREMENT pno from information_schema.tables
-        where TABLE_NAME = 'pds'; -->
+        <!--  select AUTO_INCREMENT - 1 pno from information_schema.TABLES where TABLE_NAME = 'pds';-->
 
         select last_insert_id() from pds limit 1,1
     </select>
 
     <insert id="insertPdsAttach" parameterType="PdsAttach">
         insert into pdsattach (pno, fname, ftype, fsize)
-        values (#{pno},#{fname},#{ftype},#{fsize})
+        values (#{pno}, #{fname}, #{ftype}, #{fsize})
     </insert>
 
     <select id="selectPds" resultType="Pds">
-        select bno, title, userid, regdate, thumbs, views from Pds2
-        order by bno desc limit #{stnum}, 25
+        select pno, title, userid, regdate, thumbs, views from pds
+        order by pno desc limit #{stnum}, 25
     </select>
 
-    <select id="selectOnePds" resultType="Pds">
-        select * from Pds2 where bno = #{bno}
+    <select id="selectOnePds" resultMap="ppa">
+        select * from ppa where pno = #{pno}
     </select>
 
     <select id="selectCountPds">
         select ceil (count(pno) / 25) cntpg from pds
     </select>
 
-    <!--    &lt;!&ndash; 통째로 다 들고오는 것 &ndash;&gt;
-    <select id="selectPds" resultType="Pds">
-        select bno, title, userid, regdate, thumbs, views from Pds2
-        order by bno desc limit #{stnum}, 25
+    <select id="selectOnePdsAttach" resultType="PdsAttach">
+        select * from pdsattach where pno = #{pno}
     </select>
-
-
-    <update id="updateViewPds">
-        update Pds2 set views = views + 1
-        where bno = #{bno}
-    </update>
-
-    <select id="selectCountPds">
-        &lt;!&ndash; select count(*) from Pds2 / 총 페이지 수 &ndash;&gt;
-        &lt;!&ndash; 총 페이지 수에서 25로 나누면 현재 페이지인데 ceil로.. &ndash;&gt;
-        select ceil(count(bno) / 25) cntpg from Pds2
-    </select>
-
-    &lt;!&ndash; 동적질의문으로 검색 기능 구현 &ndash;&gt;
-    &lt;!&ndash; 단, 컬럼명이나 테이블명에는 #{}가 아닌 ${}를 사용!! &ndash;&gt;
-    <select id="selectFindPds" parameterType="map" resultType="Pds">
-        select bno, title, userid, regdate, thumbs, views from Pds2
-
-        <if test="findtype != 'titcont'">
-            where ${findtype} like concat('%', #{findkey}, '%')
-        </if>
-
-        <if test="findtype == 'titcont'">
-            where title like concat('%', #{findkey}, '%')
-                or contents like concat('%', #{findkey}, '%')
-        </if>
-
-        order by bno desc limit #{stnum}, 25
-    </select>
-
-    &lt;!&ndash; 동적질의문으로 검색 기능 구현 2 &ndash;&gt;
-    <select id="countFindPds" parameterType="map">
-        select ceil(count(bno) / 25) cntfpg from Pds2
-
-        <if test="findtype != 'titcont'">
-            where ${findtype} like concat('%', #{findkey}, '%')
-        </if>
-
-        <if test="findtype == 'titcont'">
-            where title like concat('%', #{findkey}, '%')
-            or contents like concat('%', #{findkey}, '%')
-        </if>
-    </select>-->
 
 </mapper>
