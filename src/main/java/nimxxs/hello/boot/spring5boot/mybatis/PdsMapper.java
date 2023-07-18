@@ -2,6 +2,7 @@ package nimxxs.hello.boot.spring5boot.mybatis;
 
 import nimxxs.hello.boot.spring5boot.model.Pds;
 import nimxxs.hello.boot.spring5boot.model.PdsAttach;
+import nimxxs.hello.boot.spring5boot.model.PdsComment;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -23,6 +24,8 @@ public interface PdsMapper {
     int selectCountPds();
 
     PdsAttach selectOnePdsAttach(String pno);
+    int insertComment(PdsComment pc);
+    List<PdsComment> selectPdsComment(String pno);
 
 
 
