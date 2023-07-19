@@ -27,6 +27,9 @@ public interface PdsMapper {
     int insertComment(PdsComment pc);
     List<PdsComment> selectPdsComment(String pno);
 
+    int insertPdsComment(PdsComment pc);
+
+    int insertPdsReply(PdsComment pc);
 
 
 //    int updateViewPds(String bno);
