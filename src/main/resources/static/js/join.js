@@ -14,11 +14,12 @@ noagree?.addEventListener('click', () => {
 });
 
 // checkme
-let frm = document.forms.agreefrm2;     // 폼 안에서 특정 요소를 가져오는 것은 id가 아닌 name으로 가져옴. 아닐시 id로 가져와야함.
+
 let checkbtn2 = document.querySelector("#checkbtn2");
 let cancelbtn2 = document.querySelector("#cancelbtn2");
-
 checkbtn2?.addEventListener('click', () => {
+    let frm = document.forms.agreefrm2;     // 충돌할까봐 여기로 옮겨넣음 // 폼 안에서 특정 요소를 가져오는 것은 id가 아닌 name으로 가져옴. 아닐시 id로 가져와야함.
+
     if (frm.name.value === '') alert('이름을 입력해주세요!');
     else if (frm.jumin1.value === '') alert('생년월일을 작성해주세요!');
     else if (frm.jumin2.value === '') alert('주민번호 뒷자리를 작성해주세요!');
@@ -201,26 +202,3 @@ go2idx?.addEventListener('click', () => {
     location.href = "/";
 });
 
-// login
-let loginbtn = document.querySelector("#loginbtn");
-let lguid = document.querySelector("#userid");
-let lgpwd = document.querySelector("#passwd");
-let lgfrm = document.querySelector("#lgnfrm");
-
-loginbtn?.addEventListener('click', () => {
-    // 유효성 검사
-    if (lguid.value === '') alert('아이디 입력하세요!!');
-    else if (lgpwd.value === '') alert('비밀번호를 입력하세요!!');
-    else {
-        lgfrm.method = 'post';
-        lgfrm.action = '/join/login';
-        lgfrm.submit();     // 보내는 것
-    }
-});
-
-// logout
-let lgoutbtn = document.querySelector("#lgoutbtn");
-
-lgoutbtn?.addEventListener('click', () => {
-   location.href = '/join/logout';
-});
