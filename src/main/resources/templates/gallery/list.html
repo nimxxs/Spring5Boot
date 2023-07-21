@@ -37,183 +37,21 @@
     </div><!-- 검색 및 새글쓰기 -->
 
     <div class="row justify-content-center mb-4">
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="http://localhost/cdn/%EC%98%A5%EC%A7%80.jpg" class="card-img-top" alt="..."></a>
+
+
+        <div th:each="gal : ${gals}" class="col-10 card" style="width: 18rem">
+            <a th:href="|/gallery/view/${gal.gno}|">
+                <img th:src="|http://localhost/cdn/_thumbs/small_${#strings.arraySplit(gal.ga.fname,';')[0]}|" class="card-img-top" alt="..."></a>
 
             <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
+                <h5 class="card-title" th:text="${gal.title}">갤러리 제목</h5>
                 <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
+                    <span th:text="${gal.userid}">작성자</span>
+                    <span th:text="${gal.regdate}" style="float: right">2023-07-20</span>
                 </p>
                 <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
-                </p>
-            </div>
-        </div>
-        <div class="col-10 card" style="width: 18rem">
-            <a href="#"><img src="/assets/img/옥지.jpg" class="card-img-top" alt="..."></a>
-
-            <div class="card-body">
-                <h5 class="card-title">갤러리 제목</h5>
-                <p>
-                    <span>작성자</span>
-                    <span style="float: right">2023-07-20</span>
-                </p>
-                <p>
-                    <span><i class="fa-regular fa-thumbs-up"></i>123</span>
-                    <span style="float: right"><i class="fa-regular fa-eyes"></i>456</span>
+                    <span th:text="${gal.thumbs}"><i class="fa-regular fa-thumbs-up"></i>[[${gal.thumbs}]]</span>
+                    <span th:text="${gal.views}" style="float: right"><i class="fa-regular fa-eyes"></i>[[${gal.views}]]</span>
                 </p>
             </div>
         </div>
